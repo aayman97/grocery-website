@@ -1,7 +1,7 @@
 // eslint-disable
 <template>
   <div class="about">
-    <h1>This is an Contact page</h1>
+    <h1>This is a Contact page</h1>
   </div>
 </template>
 
