@@ -71,7 +71,7 @@ nav {
 
     &.router-link-exact-active::before {
       content: "";
-      display: inline-block;
+      display: block;
       width: 10px;
       height: 10px;
       position: absolute;
