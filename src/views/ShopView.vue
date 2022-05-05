@@ -5,7 +5,7 @@
       <div style="display: flex; gap: 25px">
         <FilterComponent @filterItem="filterLabel" :categories="categories" />
         <SearchComponent @searchValueChild="searchValueParent" />
-        {{ cart.length }}
+        <CartComponent />
       </div>
     </div>
     <div v-if="defaultFilterItem === 'All'" class="shop-card-container">
@@ -42,14 +42,15 @@
 import ShopCard from "../components/ShopCard.vue";
 import FilterComponent from "../components/FilterComponent.vue";
 import SearchComponent from "../components/SearchComponent.vue";
+import CartComponent from "../components/CartComponent.vue";
 import axios from "axios";
-import { mapState } from "vuex";
 export default {
   name: "ShopView",
   components: {
     ShopCard,
     FilterComponent,
     SearchComponent,
+    CartComponent,
   },
   data() {
     return {
@@ -60,9 +61,7 @@ export default {
       searchValue: "",
     };
   },
-  computed: {
-    ...mapState(["cart"]),
-  },
+
   methods: {
     filterLabel(e) {
       this.defaultFilterItem = e;

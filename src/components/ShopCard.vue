@@ -72,7 +72,7 @@ export default {
   },
   created() {
     for (let i = 0; i < this.$store.state.cart.length; i++) {
-      if (this.$store.state.cart[i].productObject === this.product) {
+      if (this.$store.state.cart[i].productObject.id === this.product.id) {
         this.quantity = this.$store.state.cart[i].quantity;
         break;
       }
@@ -97,6 +97,13 @@ export default {
             quantity: this.quantity,
           },
         });
+      }
+    },
+  },
+  watch: {
+    "$store.state.cart": function (e) {
+      if (e.length === 0) {
+        this.quantity = 0;
       }
     },
   },

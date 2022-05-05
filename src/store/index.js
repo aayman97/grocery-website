@@ -10,7 +10,9 @@ export default createStore({
       let check = false;
 
       for (let i = 0; i < state.cart.length; i++) {
-        if (state.cart[i].productObject === payload.product.productObject) {
+        if (
+          state.cart[i].productObject.id === payload.product.productObject.id
+        ) {
           check = true;
           state.cart[i].quantity++;
           break;
@@ -22,7 +24,9 @@ export default createStore({
     },
     removeFromList(state, payload) {
       for (let i = 0; i < state.cart.length; i++) {
-        if (state.cart[i].productObject === payload.product.productObject) {
+        if (
+          state.cart[i].productObject.id === payload.product.productObject.id
+        ) {
           if (state.cart[i].quantity === 1) {
             state.cart.splice(i, 1);
           } else {
@@ -31,6 +35,9 @@ export default createStore({
           break;
         }
       }
+    },
+    clearCart(state) {
+      state.cart = [];
     },
   },
   actions: {},
