@@ -1,5 +1,26 @@
 .shop-view {
   width: 100%;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // height: 100vh;
   //   background-color: red;
+}
+.filter-text-component-cart {
+  width: 95%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.shop-card-container {
+  width: 95%;
+  display: flex;
+  // background-color: aqua;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  // justify-content: space-around;
 }

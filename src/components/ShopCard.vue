@@ -6,7 +6,7 @@
       <div id="name-and-price">
         <div id="weight-num">
           <h4>{{ productNameProp }}</h4>
-          <h5>{{ weight }}kg</h5>
+          <h5>{{ weight }}</h5>
         </div>
         <h4>{{ priceProp.toFixed(1) }}LE</h4>
       </div>
@@ -43,12 +43,16 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "ShopCard",
   data() {
     return { quantity: 0 };
   },
   props: {
+    product: {
+      type: Object,
+    },
     priceProp: {
       type: Number,
       default: 30,
@@ -57,37 +61,46 @@ export default {
       default: "",
     },
     weight: {
-      type: Number,
+      type: String,
     },
     urlImage: {
       type: String,
     },
   },
+  computed: {
+    ...mapState(["cart"]),
+  },
+  created() {
+    for (let i = 0; i < this.$store.state.cart.length; i++) {
+      if (this.$store.state.cart[i].productObject === this.product) {
+        this.quantity = this.$store.state.cart[i].quantity;
+        break;
+      }
+    }
+  },
   methods: {
     addQuantity: function () {
       this.quantity++;
+      this.$store.commit("addToList", {
+        product: {
+          productObject: this.product,
+          quantity: this.quantity,
+        },
+      });
     },
     minusQuantity: function () {
       if (this.quantity > 0) {
         this.quantity--;
+        this.$store.commit("removeFromList", {
+          product: {
+            productObject: this.product,
+            quantity: this.quantity,
+          },
+        });
       }
     },
-    // showInfo: function () {
-    //   if (document.getElementsByClassName("info-box")) {
-    //     if (
-    //       document.getElementsByClassName("info-box")[0].style.display ===
-    //       "flex"
-    //     ) {
-    //       document.getElementsByClassName("info-box")[0].style.display = "none";
-    //     } else {
-    //       document.getElementsByClassName("info-box")[0].style.display = "flex";
-    //     }
-    //   }
-    // },
   },
 };
-
-// console.log(document.getElementsByClassName("button-38"));
 </script>
 
 <style lang="scss">
@@ -110,10 +123,12 @@ export default {
   height: 260px;
   background-color: #d0fdb4;
   border-radius: 10px;
+  margin: 20px;
   //   overflow: hidden;
   padding: 7px;
-  margin-left: 20px;
-  margin-right: 20px;
+  // margin-left: 20px;
+  // margin-right: 30px;
+  box-shadow: 0 8px 8px 4px #90b37b1e;
   position: relative;
 
   .image-container {
