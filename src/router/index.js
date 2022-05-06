@@ -8,11 +8,17 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+    meta: {
+      title: "Freshu | Home",
+    },
   },
   {
     path: "/shop",
     name: "shop",
     component: ShopView,
+    meta: {
+      title: "Freshu | Shop",
+    },
   },
   {
     path: "/about",
@@ -22,11 +28,18 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+
+    meta: {
+      title: "Freshu | About",
+    },
   },
   {
     path: "/contact",
     name: "contact",
     component: ContactView,
+    meta: {
+      title: "Freshu | Contact",
+    },
   },
 ];
 
@@ -35,4 +48,8 @@ const router = createRouter({
   routes,
 });
 
+router.beforeEach((to, from, next) => {
+  document.title = `${to.meta.title}`;
+  next();
+});
 export default router;
