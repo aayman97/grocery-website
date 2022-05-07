@@ -13,7 +13,7 @@
     <div class="line" />
     <div class="title-number">
       <h3>Total (tax incl.)</h3>
-      <h3>2000.0 LE</h3>
+      <h3>{{ totalPrice + 20 }}.0 LE</h3>
     </div>
   </div>
 </template>
