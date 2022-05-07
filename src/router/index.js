@@ -19,13 +19,14 @@ const routes = [
     meta: {
       title: "Freshu | Shop",
     },
-    children: [
-      {
-        path: "Checkout",
-        name: "Checkout",
-        component: CheckoutView,
-      },
-    ],
+  },
+  {
+    path: "/shop/checkout",
+    name: "Checkout",
+    component: CheckoutView,
+    meta: {
+      title: "Freshu | Shop",
+    },
   },
   {
     path: "/about",

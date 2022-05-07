@@ -39,6 +39,44 @@ export default createStore({
     clearCart(state) {
       state.cart = [];
     },
+    addToListCheckout(state, payload) {
+      for (let i = 0; i < state.cart.length; i++) {
+        if (
+          state.cart[i].productObject.id ===
+          payload.product.productObject.productObject.id
+        ) {
+          state.cart[i].quantity++;
+          break;
+        }
+      }
+    },
+    removeFromListCheckout(state, payload) {
+      for (let i = 0; i < state.cart.length; i++) {
+        if (
+          state.cart[i].productObject.id ===
+          payload.product.productObject.productObject.id
+        ) {
+          if (state.cart[i].quantity === 1) {
+            state.cart.splice(i, 1);
+          } else {
+            state.cart[i].quantity--;
+          }
+          break;
+        }
+      }
+    },
+
+    clearProductFromCheckout(state, payload) {
+      for (let i = 0; i < state.cart.length; i++) {
+        if (
+          state.cart[i].productObject.id ===
+          payload.product.productObject.productObject.id
+        ) {
+          state.cart.splice(i, 1);
+          break;
+        }
+      }
+    },
   },
   actions: {},
   modules: {},

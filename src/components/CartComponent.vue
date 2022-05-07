@@ -55,15 +55,12 @@
           Clear Cart
         </h5>
 
-        <!-- <router-link
-          :to="{
-            name: 'Checkout',
-          }"
-        > -->
-        <h5 style="color: #41ab00; letter-spacing: 0.6px; cursor: pointer">
+        <router-link
+          :to="{ name: 'Checkout' }"
+          style="color: #41ab00; letter-spacing: 0.6px; cursor: pointer"
+        >
           Proceed to Checkout
-        </h5>
-        <!-- </router-link> -->
+        </router-link>
       </div>
     </div>
   </div>
