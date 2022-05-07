@@ -81,4 +81,25 @@ export default {
     text-align: left;
   }
 }
+
+@media (min-width: 335px) and(max-width: 699px) {
+  .filter-menu {
+    max-height: 80px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 334px) {
+  #filter-component {
+    width: 100px;
+    margin-left: 10px;
+  }
+  .filter-menu {
+    max-height: 80px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100px;
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div style="position: relative; margin-top: 10px">
+  <div class="cart-container">
     <fa
       @click="toggle"
       style="color: black; font-size: 25px; cursor: pointer"
@@ -39,7 +39,7 @@
           justify-content: center;
         "
       >
-        <h2>There is no item in the cart</h2>
+        <h2>No item</h2>
       </div>
 
       <div v-if="cart.length > 0" class="clear-and-proceed">
@@ -54,9 +54,16 @@
         >
           Clear Cart
         </h5>
+
+        <!-- <router-link
+          :to="{
+            name: 'Checkout',
+          }"
+        > -->
         <h5 style="color: #41ab00; letter-spacing: 0.6px; cursor: pointer">
           Proceed to Checkout
         </h5>
+        <!-- </router-link> -->
       </div>
     </div>
   </div>
@@ -86,6 +93,11 @@ export default {
 </script>
 
 <style lang="scss">
+.cart-container {
+  position: relative;
+  margin-top: 10px;
+  margin-right: 20px;
+}
 #cart-length {
   position: absolute;
   color: black;
@@ -155,5 +167,205 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (min-width: 421px) and (max-width: 490px) {
+  .cart-container {
+    position: absolute;
+    top: 20px;
+    left: 72%;
+  }
+
+  #cart-length {
+    position: absolute;
+    color: black;
+    font-size: 13px;
+    left: 60%;
+    bottom: 60%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d0fdb4;
+    border-radius: 100%;
+    font-weight: 700;
+    border-style: solid;
+    border-color: white;
+  }
+  #cart-item {
+    width: 90vw;
+    max-height: 22vh;
+    overflow-y: scroll;
+    top: 130%;
+    position: absolute;
+    right: -18vw;
+  }
+}
+
+@media (min-width: 353px) and (max-width: 420px) {
+  .cart-container {
+    position: absolute;
+    top: 15px;
+    left: 68%;
+  }
+
+  #cart-length {
+    position: absolute;
+    color: black;
+    font-size: 13px;
+    left: 60%;
+    bottom: 60%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d0fdb4;
+    border-radius: 100%;
+    font-weight: 700;
+    border-style: solid;
+    border-color: white;
+  }
+  #cart-item {
+    width: 90vw;
+    max-height: 22vh;
+    overflow-y: scroll;
+    top: 130%;
+    position: absolute;
+    right: -22vw;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 352px) {
+  .cart-container {
+    position: absolute;
+    top: 15px;
+    left: 65%;
+  }
+
+  #cart-length {
+    position: absolute;
+    color: black;
+    font-size: 13px;
+    left: 60%;
+    bottom: 60%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d0fdb4;
+    border-radius: 100%;
+    font-weight: 700;
+    border-style: solid;
+    border-color: white;
+  }
+  #cart-item {
+    width: 90vw;
+    max-height: 22vh;
+    overflow-y: scroll;
+    top: 130%;
+    position: absolute;
+    right: -25vw;
+  }
+  .product-cart-item {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    img {
+      height: 100%;
+      border-radius: 10px;
+      object-fit: fill;
+    }
+    div {
+      height: 100%;
+      width: 45%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: left;
+      h3 {
+        font-size: 14px;
+      }
+    }
+    #price {
+      align-self: center;
+      font-size: 15px;
+      width: 20%;
+    }
+  }
+}
+
+@media (max-width: 299px) {
+  .cart-container {
+    position: absolute;
+    top: 15px;
+    left: 60%;
+  }
+
+  #cart-length {
+    position: absolute;
+    color: black;
+    font-size: 13px;
+    left: 60%;
+    bottom: 60%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d0fdb4;
+    border-radius: 100%;
+    font-weight: 700;
+    border-style: solid;
+    border-color: white;
+  }
+  #cart-item {
+    width: 90vw;
+    max-height: 22vh;
+    overflow-y: scroll;
+    top: 130%;
+    position: absolute;
+    right: -27vw;
+  }
+
+  .product-cart-item {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    img {
+      height: 90%;
+      border-radius: 10px;
+      object-fit: fill;
+    }
+    div {
+      height: 90%;
+      width: 50%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: left;
+
+      h3 {
+        font-size: 14px;
+      }
+    }
+    #price {
+      align-self: center;
+      font-size: 14px;
+      width: 20%;
+    }
+  }
 }
 </style>

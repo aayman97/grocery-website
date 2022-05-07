@@ -2,7 +2,7 @@
   <div class="shop-view">
     <div class="filter-text-component-cart">
       <h1>{{ defaultFilterItem }} Products</h1>
-      <div style="display: flex; gap: 25px">
+      <div class="right-side-container">
         <FilterComponent @filterItem="filterLabel" :categories="categories" />
         <SearchComponent @searchValueChild="searchValueParent" />
         <CartComponent />

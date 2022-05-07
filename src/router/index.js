@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ShopView from "../views/ShopView.vue";
 import ContactView from "../views/ContactView.vue";
-
+import CheckoutView from "../views/CheckoutView.vue";
 const routes = [
   {
     path: "/",
@@ -19,6 +19,13 @@ const routes = [
     meta: {
       title: "Freshu | Shop",
     },
+    children: [
+      {
+        path: "Checkout",
+        name: "Checkout",
+        component: CheckoutView,
+      },
+    ],
   },
   {
     path: "/about",

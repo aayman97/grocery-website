@@ -72,6 +72,15 @@ body {
   transition: 0.8s;
 }
 
+@media (max-width: 699px) {
+  .search-container:hover > .search-input {
+    width: 30vw;
+  }
+
+  .search-container > .search-input:focus {
+    width: 30vw;
+  }
+}
 /* .search-container .search-btn .fas {
   color: #5cbdbb;
 } */
