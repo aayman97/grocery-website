@@ -431,7 +431,7 @@ export default {
     transition: opacity 1s linear;
   }
   .card-container {
-    width: 14vw;
+    width: 13.5vw;
     height: 240px;
     margin: 20px;
     // .image-container {
