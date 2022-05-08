@@ -141,8 +141,8 @@ export default {
 
 @media (min-width: 0px) and (max-width: 534px) {
   .payment-details-box {
-    width: 150px;
-    height: 100px;
+    width: 170px;
+    height: 110px;
     margin-top: 10px;
     .title-number {
       display: flex;

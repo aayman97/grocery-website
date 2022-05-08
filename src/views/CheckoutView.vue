@@ -196,7 +196,7 @@ export default {
 
     .item-component-container {
       width: 100%;
-      max-height: 25xvh;
+      max-height: 25vh;
       overflow-y: scroll;
       display: flex;
       flex-direction: column;

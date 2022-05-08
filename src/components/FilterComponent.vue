@@ -57,7 +57,7 @@ export default {
   justify-content: space-between;
   cursor: pointer;
   border-bottom-style: solid;
-  border-image: linear-gradient(white, rgba(0, 0, 0, 0.1)) 1;
+  // border-image: linear-gradient(white, rgba(0, 0, 0, 0.1)) 1;
 }
 
 .filter-menu {
@@ -96,7 +96,7 @@ export default {
     margin-left: 10px;
   }
   .filter-menu {
-    max-height: 80px;
+    max-height: 160px;
     overflow-y: scroll;
     overflow-x: hidden;
     width: 100px;
